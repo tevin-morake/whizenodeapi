@@ -4,6 +4,7 @@ const dotenv = require('dotenv');// Allows us to work with environment variables
 const mongoose = require('mongoose');// this makes working with mongodb easier
 // Import Authentication Routes
 const authRoutes = require('./routes/auth');
+const postRoutes = require('./routes/posts');
 
 dotenv.config();//Loads .env files
 
@@ -25,5 +26,6 @@ app.use(express.json());
 // Create Route MiddleWare
 // In short, the routes are going to be prefixed with  api/user...
 app.use('/api/user', authRoutes);
+app.use('/api/posts', postRoutes);
 
 app.listen(3000, () => console.log('Script Wizard Node Server Is Up & Running'));
