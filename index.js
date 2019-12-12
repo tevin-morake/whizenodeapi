@@ -28,4 +28,5 @@ app.use(express.json());
 app.use('/api/user', authRoutes);
 app.use('/api/posts', postRoutes);
 
-app.listen(3000, () => console.log('Script Wizard Node Server Is Up & Running'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log('Script Wizard Node Server Is Up & Running'));
